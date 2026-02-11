@@ -24,10 +24,13 @@ let options = {
 };
 
 
-    fetch("https://quotes.domiadi.com/api")
+    fetch("https://api.quotable.io/random")
+
   .then(response => response.json())
   .then(data => {
-    quoteDisplayEl.textContent = data.quote;
+    .then(data => {
+    quoteDisplayEl.textContent = data.content;
+
     spinnerEl.classList.add("d-none");
     speedTypingCont.classList.remove("d-none");
   })
@@ -70,10 +73,12 @@ let resetFunction = function() {
         method: "GET"
     };
   
-    fetch("https://quotes.domiadi.com/api")
+    fetch("https://api.quotable.io/random")
   .then(response => response.json())
   .then(data => {
-    quoteDisplayEl.textContent = data.quote;
+   .then(data => {
+    quoteDisplayEl.textContent = data.content;
+
     spinnerEl.classList.add("d-none");
     speedTypingCont.classList.remove("d-none");
   })
